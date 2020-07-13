@@ -3,7 +3,7 @@ FROM centos
 RUN yum install ruby -y
 
 #This step will be done on your podman/docker host once you have already set up local git repo using "https://mojo.redhat.com/docs/DOC-1042241" only then COPY will work
-
+ADD oc1 .
 WORKDIR /verification-tests/
 
 COPY ./verification/ .
@@ -19,4 +19,3 @@ RUN bundle update
 WORKDIR /verification-tests/verification-tests/
 
 CMD ["/bin/bash"]
-
